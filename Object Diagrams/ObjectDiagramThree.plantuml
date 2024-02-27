@@ -1,0 +1,67 @@
+@startuml ObjectDiagramThree
+object "<u>phpDemo1: Folder</u>" as phpDemo1 {
+    name = "php_demo1"
+    subfolders = ArrayList<Folder>
+    files = ArrayList<File>
+}
+
+object "<u>SourceFiles: Folder</u>" as SourceFiles {
+    name = "Source Files"
+    subfolders = ArrayList<Folder>
+    files = ArrayList<File>
+}
+
+object "<u>IncludePath: Folder</u>" as IncludePath {
+    name = "Include Path"
+    subfolders = ArrayList<Folder>
+    files = ArrayList<File>
+}
+
+object "<u>RemoteFiles: Folder</u>" as RemoteFiles {
+    name = "Remote Files"
+    subfolders = ArrayList<Folder>
+    files = ArrayList<File>
+}
+
+object "<u>phalcon: Folder</u>" as phalcon {
+    name = ".phalcon"
+    subfolders = ArrayList<Folder>
+    files = ArrayList<File>
+}
+
+object "<u>cache: Folder</u>" as cache {
+    name = "cache"
+    subfolders = ArrayList<Folder>
+    files = ArrayList<File>
+}
+
+object "<u>public: Folder</u>" as publicFolder {
+    name = "public"
+    subfolders = ArrayList<Folder>
+    files = ArrayList<File>
+}
+
+object "<u>htaccess: File</u>" as htaccess {
+    name = ".htaccess"
+}
+
+object "<u>htrouter: File</u>" as htrouter {
+    name = ".htrouter.php"
+}
+
+object "<u>indexHtml: File</u>" as indexHtml {
+    name = "index.html"
+}
+
+phpDemo1 *-- SourceFiles : "subfolders[0]"
+phpDemo1 *-- IncludePath : "subfolders[1]"
+phpDemo1 *-- RemoteFiles : "subfolders[2]"
+
+SourceFiles *-- phalcon : "subfolders[0]"
+SourceFiles *-- cache : "subfolders[1]"
+SourceFiles *-- publicFolder : "subfolders[2]"
+
+publicFolder *-- htaccess : "files[0]"
+publicFolder *-- htrouter : "files[1]"
+publicFolder *-- indexHtml : "files[2]"
+@enduml

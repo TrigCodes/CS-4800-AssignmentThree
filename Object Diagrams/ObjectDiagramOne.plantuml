@@ -1,0 +1,21 @@
+@startuml OnjectDiagramOne
+object "<u>ShipOne: Ship</u>" as objectOne {
+  shipName = "Titanic"
+  yearBuilt = "March 31st, 1909"
+}
+
+object "<u>CruiseShipOne: CruiseShip</u>" as objectTwo {
+  shipName = "MVGemini"
+  yearBuilt = "May 30th, 1991"
+  maxNumberPassengers = 100
+}
+
+object "<u>CargoShipOne: CargoShip</u>" as objectThree {
+  shipName = "EverGiven"
+  yearBuilt = "September 25th, 2018"
+  cargoCapacityInTonnage = 220940
+}
+
+objectOne <|-- objectTwo
+objectOne <|-- objectThree
+@enduml

@@ -1,0 +1,22 @@
+@startuml OnjectDiagramTwo
+object "<u>CourseOne: Course</u>" as courseOne {
+    name = "CS5800 - Advanced Software Engineering"
+    instructors = ArrayList<Instructor>
+    textbooks = ArrayList<Textbook>
+}
+
+object "<u>InstructorOne: Instructor</u>" as instructorOne {
+    firstName = "Nima"
+    lastName = "Davarpanah"
+    officeNumber = "3-2636"
+}
+
+object "<u>TextbookOne: Textbook</u>" as textbookOne {
+    author = "Robert Cecil Martin"
+    publisher = "Pearson"
+    title = "Clean Code: A Handbook of Agile Software Craftsmanship"
+}
+
+courseOne o-- instructorOne : "instructors[0]"
+courseOne o-- textbookOne : "textbooks[0]"
+@enduml
